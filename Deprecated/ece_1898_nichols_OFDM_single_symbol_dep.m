@@ -69,7 +69,7 @@ ylabel("Amplitude")
 legend("Real","Imaginary")
 
 % plot the magnitude spectrum of the message
-[f, spec] = GetSpectrum(t, s_t, OFDM_samplerate);
+[f, spec] = GetSpectrum(s_t, OFDM_samplerate);
 mag_spec = 20*log10(abs(spec));
 figure(4)
 clf
@@ -99,7 +99,7 @@ ylabel("Amplitude")
 legend("Real","Imaginary")
 
 % plot the spectrum of the upsampled message
-[f_resamp, spec_resamp] = GetSpectrum(t_resamp, s_t_resamp, OFDM_samplerate_resamp);
+[f_resamp, spec_resamp] = GetSpectrum(s_t_resamp, OFDM_samplerate_resamp);
 mag_spec_resamp = 20*log10(abs(spec_resamp));
 figure(6)
 clf
@@ -129,7 +129,7 @@ legend("Real","Imaginary")
 
 % find the spectrum of the original and padded message
 
-[f_padded, spec_padded] = GetSpectrum(t_padded, s_t_padded, OFDM_samplerate_resamp);
+[f_padded, spec_padded] = GetSpectrum(s_t_padded, OFDM_samplerate_resamp);
 mag_spec_padded = 20*log10(abs(spec_padded));
 
 % plot the magnitude spectrum of the padded message
